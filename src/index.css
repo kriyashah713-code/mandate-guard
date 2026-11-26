@@ -1,0 +1,71 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-sans: 'DM Sans', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+    --mg-canvas: #f4f7fb;
+    --mg-surface: #ffffff;
+    --mg-subtle: #eaf0f7;
+    --mg-border: #d8e2ee;
+    --mg-text: #0f172a;
+    --mg-text-muted: #475569;
+  }
+
+  .dark {
+    --mg-canvas: #050914;
+    --mg-surface: #0b1120;
+    --mg-subtle: #070c1a;
+    --mg-border: #1e293b;
+    --mg-text: #f1f5f9;
+    --mg-text-muted: #94a3b8;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--mg-canvas);
+    color: var(--mg-text);
+    scroll-behavior: smooth;
+    transition: background-color 280ms cubic-bezier(0.16, 1, 0.3, 1),
+      color 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--mg-subtle);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--mg-border);
+  border-radius: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

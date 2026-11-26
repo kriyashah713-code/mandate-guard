@@ -1,0 +1,6 @@
+{
+  "name": "Mandate Guard",
+  "description": "Know Your Agent (KYA) financial mandate enforcement, action-by-action verification, and risk operations platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
